@@ -5,10 +5,12 @@ import { RouteReuseStrategy } from "@angular/router";
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
-
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 import {
   AngularFireDatabaseModule,
   AngularFireDatabase,
@@ -32,8 +34,10 @@ export const firebaseConfig = {
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,
